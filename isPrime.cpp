@@ -1,12 +1,14 @@
 #include "isPrime.h"
 #include <cmath>
 
+set<unsigned long> isPrime::calculados;
 
 bool isPrime::IsPrime(unsigned long num)
 {
-    unsigned long divisor=2;
+    if (calculados.find(num)!=calculados.end()) return true;
     double umbral;
     umbral = sqrt(static_cast<double>(num));
+    unsigned long divisor=2;
     while (divisor<=umbral)
     {
         if (IsPrime(divisor))
@@ -14,21 +16,23 @@ bool isPrime::IsPrime(unsigned long num)
             if (num%divisor==0)
                 return false;
         }
-        divisor++;
+        if (divisor!=2) divisor +=2;
+        else divisor++;
     }
+    calculados.insert(num);
     return true;
 }
 
 unsigned long isPrime::BelowPrime (unsigned long num)
 {
-    if (num%2 == 0) // si num es par
+    if (num%2==0 && num!=2) // si num es par
     {
-        num = num-1;
+        num--;
     }
 
     while (isPrime::IsPrime(num)==false)
     {
-        num = num-2;
+        num -= 2;
     }
     return num;
 }

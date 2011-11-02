@@ -10,8 +10,8 @@ int main()
     unsigned long num;
 
     cout << endl << "Introduzca un entero positivo: " << endl;
-    cin >> num;
-    cout << "El numero primo mas cercano a "<< num << " es " << isPrime::BelowPrime(num) << endl << endl;
+    while (cin >> num)
+        cout << "El numero primo mas cercano por debajo de "<< num << " es " << isPrime::BelowPrime(num) << endl << endl;
 
     return 0;
 }

@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1320105463 source:c:\users\carlos\programacion\isprime\main.cpp
+1320273825 source:c:\users\carlos\programacion\isprime\main.cpp
 	<iostream>
 	"isPrime.h"
 
-1320106216 c:\users\carlos\programacion\isprime\isprime.h
+1320273804 c:\users\carlos\programacion\isprime\isprime.h
+	<set>
 
-1320105682 source:c:\users\carlos\programacion\isprime\isprime.cpp
+1320273899 source:c:\users\carlos\programacion\isprime\isprime.cpp
 	"isPrime.h"
 	<cmath>
 
